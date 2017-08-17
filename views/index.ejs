@@ -6,7 +6,15 @@
 </head>
 <body>
 <div class="canvas-app">
-    <img src="nodejs.png"/>
+    <img src="rbclogo.jpg"/>
+    <p> A Canvas app can embed an external app in Salesforce.</p>
+    <ol>
+    <li> Allow external app to securely authenticate with Salesforce using OAuth. Canvas SDK leverages the 
+    Connected App framework to control which profiles and which elements will have access to the Canvas app of Salesforce </li>
+    <li> Allow external app to securely access Salesforce data.</li>
+    <li> Allow external app to get context information from Salesforce. </li>
+    </ol>
+    <p> &nbsp;</p>
     <p>Hello, <%= context.user.firstName %>. This is a web app written in Node.js embedded in your Salesforce page (It could also be written in any other language).</p>
     <p>It is aware of its environment. For example, here are a few things it knows:</p>
     <table>
