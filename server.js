@@ -1,5 +1,5 @@
 var express = require('express'),
-    routes = require('./index.js');
+    routes = require('./index.js'),
     bodyParser = require('body-parser'),
     request = require('request'),
     qrcode = require('qrcode-npm'),
