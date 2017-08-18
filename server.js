@@ -1,4 +1,5 @@
 var express = require('express'),
+    routes = require(‘./index.js’);
     bodyParser = require('body-parser'),
     request = require('request'),
     qrcode = require('qrcode-npm'),
@@ -42,7 +43,7 @@ app.post('/signedrequest', function(req, res) {
 });
 
 app.set('port', process.env.PORT || 5000);
-
+routes(app);
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
