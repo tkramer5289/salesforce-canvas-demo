@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 var pg = require('pg');
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
 
 app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
