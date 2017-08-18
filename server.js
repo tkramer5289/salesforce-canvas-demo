@@ -7,7 +7,9 @@ var express = require('express'),
     consumerSecret = process.env.CONSUMER_SECRET,
 
     app = express();
-
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
 app.use(express.static(__dirname + '/public'));
