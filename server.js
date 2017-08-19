@@ -8,7 +8,10 @@ var express = require('express'),
 
     app = express();
 
-
+app.get('/', function (req, res) {
+  // NEW CODE
+  res.render('index');
+})
 
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
