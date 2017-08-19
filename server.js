@@ -7,6 +7,12 @@ var express = require('express'),
     consumerSecret = process.env.CONSUMER_SECRET,
 
     app = express();
+
+var router = express.Router();
+router.get("/about",function(req,res){
+  res.sendFile(path + "about.html");
+});
+
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
 app.use(express.static(__dirname + '/public'));
