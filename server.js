@@ -8,9 +8,7 @@ var express = require('express'),
 
     app = express();
 
-var router = express.Router(); // attaches "router" variable to router method
-/* GET home page. */
-app.set('views', path.join(__dirname, 'views'));
+
 
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
@@ -46,10 +44,10 @@ app.post('/signedrequest', function(req, res) {
 });
 
 
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
-});
-module.exports = router;
+app.get('/', function (req, res) {
+  res.end('<p> &nbsp;</p><center> <h1> Example RBC App. This can be shown inside the Salesforce UI.</h1> </center>')
+})
+
 
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), function () {
