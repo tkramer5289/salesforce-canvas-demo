@@ -8,11 +8,6 @@ var express = require('express'),
 
     app = express();
 
-app.get('/', function (req, res) {
-  // NEW CODE
-  res.render('index');
-})
-
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
 app.use(express.static(__dirname + '/public'));
@@ -45,6 +40,11 @@ app.post('/signedrequest', function(req, res) {
     });
 
 });
+
+app.get('/', function (req, res) {
+  // NEW CODE
+  res.render('index');
+})
 
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), function () {
