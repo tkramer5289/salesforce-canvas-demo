@@ -9,8 +9,8 @@ var express = require('express'),
     app = express();
 
 var router = express.Router();
-router.get("/about",function(req,res){
-  res.sendFile(path + "about.html");
+router.get("/home",function(req,res){
+  res.sendFile(path + "home.html");
 });
 
 app.set('view engine', 'ejs');
