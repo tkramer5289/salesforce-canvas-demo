@@ -8,8 +8,6 @@ var express = require('express'),
 
     app = express();
 
-
-
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
 app.use(express.static(__dirname + '/public'));
@@ -43,11 +41,9 @@ app.post('/signedrequest', function(req, res) {
 
 });
 
-
 app.get('/', function (req, res) {
   res.end('<p> &nbsp;</p><center> <h1> Example RBC App. This can be shown inside the Salesforce UI.</h1> </center>')
 })
-
 
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), function () {
