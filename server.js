@@ -8,13 +8,6 @@ var express = require('express'),
 
     app = express();
 
-var router = express.Router();
-var path = __dirname + '/views/';
-
-router.get("/",function(req,res){
-  res.sendFile(path + "index.html");
-});
-app.use("/",router);
 
 
 
