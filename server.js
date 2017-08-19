@@ -8,7 +8,9 @@ var express = require('express'),
 
     app = express();
 
-
+app.get('/', function (req, res) {
+res.send('<h1>Open Source For You!</h1>');
+});
 
 
 app.set('view engine', 'ejs');
