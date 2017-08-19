@@ -10,8 +10,8 @@ var express = require('express'),
 
 var path = __dirname + '/views/';
 var router = express.Router();
-router.get("/home",function(req,res){
-  res.sendFile(path + "home.html");
+router.get("/",function(req,res){
+  res.sendFile(path + "index.html");
 });
 
 app.set('view engine', 'ejs');
@@ -46,9 +46,7 @@ app.post('/signedrequest', function(req, res) {
     });
 
 });
-app.get('/', function (req, res) {
-  res.end('Hi there!')
-})
+
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
