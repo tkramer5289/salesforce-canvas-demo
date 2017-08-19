@@ -9,9 +9,14 @@ var express = require('express'),
     app = express();
 
 app.get('/', function (req, res) {
-res.send('<h1>Open Source For You!</h1>');
+res.send('<center> <h1>RBC Example App</h1></center>');
 });
-
+var router = express.Router();
+var path = __dirname + ‘/views/’;
+app.use('/',router);
+router.get('/',function(req, res){
+  res.sendFile(path + 'index.html');
+});
 
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
