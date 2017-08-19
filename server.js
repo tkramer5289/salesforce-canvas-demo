@@ -8,6 +8,7 @@ var express = require('express'),
 
     app = express();
 
+var path = __dirname + '/views/';
 var router = express.Router();
 router.get("/home",function(req,res){
   res.sendFile(path + "home.html");
