@@ -8,9 +8,18 @@ var express = require('express'),
 
     app = express();
 
-app.get('/', function (req, res) {
-  res.end('Example RBC App. This can be shown inside the Salesforce UI.')
-})
+var router = express.Router();
+var path = __dirname + '/views/';
+router.use(function (req,res,next) {
+  console.log("/" + req.method);
+  next();
+});
+router.get("/",function(req,res){
+  res.sendFile(path + "index.html");
+});
+app.use("/",router);
+
+
 
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
