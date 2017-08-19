@@ -42,7 +42,6 @@ app.post('/signedrequest', function(req, res) {
 });
 
 app.get('/', function (req, res) {
-  // NEW CODE
   res.render('index');
 })
 
