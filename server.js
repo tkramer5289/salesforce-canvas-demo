@@ -40,14 +40,10 @@ app.post('/signedrequest', function(req, res) {
     });
 
 });
-
 app.get('/', function (req, res) {
-  res.render('index');
+  res.end('<p> &nbsp;</p><center> <h1> Example RBC App. This can be shown inside the Salesforce UI.</h1> </center>')
 })
 
-app.post('/', function (req, res) {
-  res.render('index');
-})
 
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), function () {
