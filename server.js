@@ -8,9 +8,6 @@ var express = require('express'),
 
     app = express();
 
-app.get('/', function (req, res) {
-res.send('<center> <h1>RBC Example App</h1></center>');
-});
 var router = express.Router();
 var path = __dirname + ‘/views/’;
 app.use('/',router);
