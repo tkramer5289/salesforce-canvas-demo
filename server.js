@@ -10,6 +10,10 @@ var express = require('express'),
 
 var path = __dirname + '/views/';
 var router = express.Router();
+router.use(function (req,res,next) {
+  console.log("/" + req.method);
+  next();
+});
 router.get("/",function(req,res){
   res.sendFile(path + "index.html");
 });
