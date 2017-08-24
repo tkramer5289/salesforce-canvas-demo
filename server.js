@@ -39,13 +39,10 @@ app.post('/signedrequest', function(req, res) {
 
 });
 
-app.get('/', function (req, res) {
-  res.end('<p> &nbsp;</p><center> <h1> Example RBC App. This can be shown inside the Salesforce UI.</h1> </center>')
-});
 
-app.get('/myapp',function(req,res){
+app.get('/',function(req,res){
   res.sendFile('index.html');
-  //It will find and locate index.html from View or Public
+  //It will find and locate index.html from  Public
 });
 
 app.set('port', process.env.PORT || 5000);
