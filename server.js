@@ -3,9 +3,7 @@ var express = require('express'),
     request = require('request'),
     qrcode = require('qrcode-npm'),
     decode = require('salesforce-signed-request'),
-
     consumerSecret = process.env.CONSUMER_SECRET,
-
     app = express();
 
 app.set('view engine', 'ejs');
