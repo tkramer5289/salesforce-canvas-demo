@@ -41,7 +41,12 @@ app.post('/signedrequest', function(req, res) {
 
 app.get('/', function (req, res) {
   res.end('<p> &nbsp;</p><center> <h1> Example RBC App. This can be shown inside the Salesforce UI.</h1> </center>')
-})
+});
+
+app.get('/myapp',function(req,res){
+  res.sendFile(path.join(__dirname+'/index.html'));
+  //__dirname : It will resolve to your project folder.
+});
 
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), function () {
