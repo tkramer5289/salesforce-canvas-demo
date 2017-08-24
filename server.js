@@ -31,10 +31,11 @@ app.post('/signedrequest', function(req, res) {
         var qr = qrcode.qrcode(4, 'L'),
             contact = JSON.parse(body).records[0],
             text = 'MECARD:N:' + contact.LastName + ',' + contact.FirstName + ';TEL:' + contact.Phone + ';EMAIL:' + contact.Email + ';;';
+        text1=contact.LastName;
         qr.addData(text);
         qr.make();
         var imgTag = qr.createImgTag(4);
-        res.render('index', {context: context, imgTag: imgTag});
+        res.render('index', {context: context, imgTag: imgTag, text1: text1});
     });
 
 });
