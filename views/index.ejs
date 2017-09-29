@@ -17,8 +17,8 @@
         <tr><td>FirstName:</td><td><%= text0 %></td></tr>
          <tr><td>LastName:</td><td><%= text1 %></td></tr>
     </table>
-    <p> To display your app you will use need to embed this in the url link to your webapp:
-    <b> http://yourapp/contact?id='Id' </b></p>
+    <p> To display your app in a context sensitive manner you can use the environment variable to filter results from your  webapp to display only the relevant results in this screen:
+    <b> for example use this predicate in your app: "where id=<%= context.environment.record.Id %>"</b></p>
     <p>Your embedded app - i.e. this canvas app can also access more data in Salesforce using the REST APIs. With context and APIs, 
     <b> Canvas makes it easy to integrate applications written in any language inside your Salesforce pages. </b> </p>
     <p> In the following screen, an API call from an external app shows balances for the contact  in context - the contact whose record page
