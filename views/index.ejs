@@ -9,7 +9,9 @@
 <div style="border:1px solid #666666; padding:15px;"> 
     <img src="rbclogo.jpg"/>
     <p>Hello, <%= context.user.firstName %>. This is a web app written in Node.js embedded in your Salesforce page (It could also be written in any other language).</p>
-    <p> <b> It is aware of its environment.</b> For example, here are a few things it knows:</p>
+    <p>Your embedded app - i.e. this canvas app can also access more data in Salesforce using the REST APIs. With context and APIs, 
+    <b> Canvas makes it easy to integrate applications written in any language inside your Salesforce pages. </b> </p>
+    <p> <b> This canvas app is aware of its environment.</b> For example, here are a few things it knows:</p>
     <table>
         <tr><td>User:</td><td><%= context.user.fullName %></td></tr>
         <tr><td>Object:</td><td><%= context.environment.record.attributes.type %></td></tr>
@@ -19,8 +21,7 @@
     </table>
     <p> To display your app in a context sensitive manner you can use the environment variable to filter results from your  webapp to display only the relevant results in this screen:
     <b> for example use this predicate in your app: "where id=<%= context.environment.record.Id %>"</b></p>
-    <p>Your embedded app - i.e. this canvas app can also access more data in Salesforce using the REST APIs. With context and APIs, 
-    <b> Canvas makes it easy to integrate applications written in any language inside your Salesforce pages. </b> </p>
+    
     <p> In the following screen, the external app shows balances for the contact  in context - the contact whose record page
  page we are in.</p>
     <img src="balances.jpg"/>
