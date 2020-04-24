@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link href="styles.css" rel="stylesheet">
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <body>
 <div class="canvas-app" >
 <div style="border:1px solid #666666; padding:15px;"> 
@@ -19,6 +20,14 @@
         <tr><td>FirstName:</td><td><%= text0 %></td></tr>
          <tr><td>LastName:</td><td><%= text1 %></td></tr>
     </table>
+    <p>
+      $('button').on('click', function() {
+        $.ajax({
+          type: 'POST',
+          url: '/postToChatter'
+        });
+      });
+    </p>
     <p> To display your app in a context sensitive manner you can use the environment variable to filter results from your  webapp to display only the relevant results in this screen:
     <b> for example use this predicate in your app: "where id=<%= context.environment.record.Id %>"</b></p>
     
