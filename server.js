@@ -46,7 +46,9 @@ app.post('/signedrequest', function(req, res) {
         };
 
     request(updateRequest, function(err, response, body) {
-        console.log("DEBUG Update Request: "+updateRequest);
+        console.log("DEBUG Update Request: "+updateRequest.instanceUrl);
+        console.log("DEBUG Update Request: "+updateRequest.headers);
+        console.log("DEBUG Update Request: "+updateRequest.body);
     });
 
     request(contactRequest, function(err, response, body) {
