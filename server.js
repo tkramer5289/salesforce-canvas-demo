@@ -32,16 +32,17 @@ app.post('/signedrequest', function(req, res) {
         //query = "SELECT Id, FirstName, LastName, Phone, Email, Comments__c FROM Contact WHERE Id = '" + "0036g00000AvO9tAAF" + "'",
 
         contactRequest = {
-            url: instanceUrl + '/services/data/v29.0/query?q=' + query,
+            url: instanceUrl + '/services/data/v43.0/query?q=' + query,
             headers: {
                 'Authorization': 'OAuth ' + oauthToken
             }
         },
         updateRequest = {
-            url: instanceUrl + '/services/data/v29.0/query?q=' + query,
+            url: instanceUrl + '/services/data/v43.0/sobjects/Contact/' + context.environment.record.Id,
             headers: {
                 'Authorization': 'OAuth ' + oauthToken
-            }
+            },
+            body: `{\\"Comments__c\\" : \\"${comments}\\"}`
         };
 
     request(contactRequest, function(err, response, body) {
