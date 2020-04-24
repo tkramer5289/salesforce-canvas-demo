@@ -42,8 +42,11 @@ app.post('/signedrequest', function(req, res) {
             headers: {
                 'Authorization': 'OAuth ' + oauthToken
             },
-            body: `{\\"Comments__c\\" : \\"${comments}\\"}`
+            body: '{"Comments__c" : "' + comments + '"}'
         };
+
+    request(updateRequest, function(err, response, body) {
+    });
 
     request(contactRequest, function(err, response, body) {
         //var qr = qrcode.qrcode(4, 'L'),
