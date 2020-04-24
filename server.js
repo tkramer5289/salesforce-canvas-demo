@@ -45,13 +45,10 @@ app.post('/signedrequest', function(req, res) {
             body: '{"Comments__c" : "' + comments + '"}'
         };
 
-    request(updateRequest, function(err, response, body) {
-        console.log("DEBUG Update Request: "+updateRequest.instanceUrl);
-        console.log("DEBUG Update Request: "+updateRequest.headers);
+    request(updateRequest, function(err, response, body) { 
+        console.log("DEBUG Update Request: "+updateRequest.url);
+        console.log("DEBUG Update Request: "+updateRequest.headers.toString());
         console.log("DEBUG Update Request: "+updateRequest.body);
-        console.log("DEBUG Update Request: "+contactRequest.instanceUrl);
-        console.log("DEBUG Update Request: "+contactRequest.headers);
-        console.log("DEBUG Update Request: "+contactRequest.body);
     });
 
     request(contactRequest, function(err, response, body) {
