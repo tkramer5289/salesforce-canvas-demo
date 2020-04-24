@@ -21,12 +21,14 @@
          <tr><td>LastName:</td><td><%= text1 %></td></tr>
     </table>
     <p>
-      $('button').on('click', function() {
-        $.ajax({
-          type: 'POST',
-          url: '/postToChatter'
+      <script>
+        $('button').on('click', function() {
+          $.ajax({
+            type: 'POST',
+            url: '/postToChatter'
+          });
         });
-      });
+      </script>
     </p>
     <p> To display your app in a context sensitive manner you can use the environment variable to filter results from your  webapp to display only the relevant results in this screen:
     <b> for example use this predicate in your app: "where id=<%= context.environment.record.Id %>"</b></p>
