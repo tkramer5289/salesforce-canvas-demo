@@ -13,15 +13,19 @@ app.use(express.static(__dirname + '/public'));
 
 app.post('/signedrequest', function(req, res) {
 
+    var comments = "";
+
     // You could save this information in the user session if needed
     if (signedRequest==null){
         signedRequest = decode(req.body.signed_request, consumerSecret);
+    }
+    else{
+        comments = req.body.yourComments;
     }
     
     var context = signedRequest.context,
         oauthToken = signedRequest.client.oauthToken,
         instanceUrl = signedRequest.client.instanceUrl,
-        comments = req.body.yourComments,
 
         query = "SELECT Id, FirstName, LastName, Phone, Email FROM Contact WHERE Id = '" + context.environment.record.Id + "'",
         
