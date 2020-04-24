@@ -58,6 +58,7 @@ app.post('/postToChatter', function(req, res) {
 
     // Added for Chatter post example
     sr = decode(req.body.signed_request, consumerSecret);
+    alert("Context: "+sr.context);
     // Reference the Chatter user's URL from Context.Links object.
     url = sr.context.links.chatterFeedsUrl+"/news/"+sr.context.user.userId+"/feed-items";
     body = {body : {messageSegments : [{type: "Text", text: "Some Chatter Post"}]}};
