@@ -4,7 +4,8 @@ var express = require('express'),
     qrcode = require('qrcode-npm'),
     decode = require('salesforce-signed-request'),
     consumerSecret = process.env.CONSUMER_SECRET,
-    app = express();
+    app = express()
+    signedRequest;
 
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
@@ -13,8 +14,11 @@ app.use(express.static(__dirname + '/public'));
 app.post('/signedrequest', function(req, res) {
 
     // You could save this information in the user session if needed
-    var signedRequest = decode(req.body.signed_request, consumerSecret),
-        context = signedRequest.context,
+    if (signedRequest==null){
+        signedRequest = decode(req.body.signed_request, consumerSecret);
+    }
+    
+    var context = signedRequest.context,
         oauthToken = signedRequest.client.oauthToken,
         instanceUrl = signedRequest.client.instanceUrl,
 
