@@ -53,3 +53,24 @@ app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
+
+app.post('/postToChatter', function(req, res) {
+
+    // Added for Chatter post example
+    sr = decode(req.body.signed_request, consumerSecret);
+    // Reference the Chatter user's URL from Context.Links object.
+    url = sr.context.links.chatterFeedsUrl+"/news/"+sr.context.user.userId+"/feed-items";
+    body = {body : {messageSegments : [{type: "Text", text: "Some Chatter Post"}]}};
+
+    Sfdc.canvas.client.ajax(url,{
+        client : sr.client,
+            method: 'POST',
+            contentType: "application/json",
+            data: JSON.stringify(body),
+            success : function(data) {
+            if (201 === data.status) {
+                alert("Success");
+                }
+            }
+    });
+});
