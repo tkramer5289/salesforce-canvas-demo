@@ -45,11 +45,11 @@ app.post('/signedrequest', function(req, res) {
             body: '{"Comments__c" : "' + comments + '"}'
         };
 
-    update(updateRequest, function(err, response, body) { 
-        console.log("DEBUG Update Request: "+updateRequest.url);
-        console.log("DEBUG Update Request: "+updateRequest.headers.toString());
-        console.log("DEBUG Update Request: "+updateRequest.body);
-    });
+    //request(updateRequest, function(err, response, body) { 
+    //    console.log("DEBUG Update Request: "+updateRequest.url);
+    //    console.log("DEBUG Update Request: "+updateRequest.headers.toString());
+    //    console.log("DEBUG Update Request: "+updateRequest.body);
+    //});
 
     request(contactRequest, function(err, response, body) {
         //var qr = qrcode.qrcode(4, 'L'),
